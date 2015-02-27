@@ -1,11 +1,11 @@
 
 package com.lml.platform.core.model.authentication;
 
+import com.lml.platform.core.support.audit.AbstractToken;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Table;
-
-import com.lml.platform.core.support.audit.AbstractToken;
 
 @Entity
 @Table(name = "AUTHENTICATION_USER")
