@@ -22,7 +22,7 @@ public abstract class AbstractJpaAuditable<Token extends AbstractJpaPersistable<
     /**
      * 由那个创建
      */
-    @ManyToOne(cascade = {CascadeType.REFRESH, CascadeType.MERGE,CascadeType.DETACH}, fetch = FetchType.LAZY)
+    @ManyToOne(cascade = {CascadeType.REFRESH, CascadeType.MERGE, CascadeType.DETACH}, fetch = FetchType.LAZY)
     @JoinColumn(name = "_CREATED_BY")
     @CreatedBy
     private Token createdBy;
@@ -30,7 +30,7 @@ public abstract class AbstractJpaAuditable<Token extends AbstractJpaPersistable<
     /**
      * 最后由那个修改
      */
-    @ManyToOne(cascade = {CascadeType.REFRESH, CascadeType.MERGE,CascadeType.DETACH}, fetch = FetchType.LAZY)
+    @ManyToOne(cascade = {CascadeType.REFRESH, CascadeType.MERGE, CascadeType.DETACH}, fetch = FetchType.LAZY)
     @JoinColumn(name = "_LAST_MODIFIED_BY")
     @LastModifiedBy
     private Token lastModifiedBy;
