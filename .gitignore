@@ -1,0 +1,15 @@
+# Package Files #
+*.class
+*.idea
+*.settings
+*.iml
+*.ipr
+*.iws
+*.project
+*.classpath
+*.war
+*/target/*
+*/build
+.gradle
+*/log
+/target
