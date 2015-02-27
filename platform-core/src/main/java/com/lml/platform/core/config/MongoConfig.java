@@ -54,36 +54,36 @@ public class MongoConfig extends AbstractMongoConfiguration {
     /**
      * mongo可选配置连接的最小线程键值
      */
-    private static final String MONGO_OPTIONS_CONNECTIONS_PER_HOST_KEY = "support.options.connections.per.host";
+    private static final String MONGO_OPTIONS_CONNECTIONS_PER_HOST_KEY = "mongo.options.connections.per.host";
     /**
      * mongo可选配置连接的最大线程键值
      */
-    private static final String MONGO_OPTIONS_THREADS_ALLOWED_TO_BLOCK_FOR_CONNECTION_MULTIPLIER_KEY = "support.options.threads.allowed.to.block.for.connection.multiplier";
+    private static final String MONGO_OPTIONS_THREADS_ALLOWED_TO_BLOCK_FOR_CONNECTION_MULTIPLIER_KEY = "mongo.options.threads.allowed.to.block.for.connection.multiplier";
     /**
      * mongo可选配置线程等待链接可用的最长时间键值
      */
-    private static final String MONGO_OPTIONS_MAX_WAIT_TIME_KEY = "support.options.max.wait.time";
+    private static final String MONGO_OPTIONS_MAX_WAIT_TIME_KEY = "mongo.options.max.wait.time";
     /**
      * mongo可选配置建立链接的超时时间键值
      */
-    private static final String MONGO_OPTIONS_CONNECT_TIMEOUT_KEY = "support.options.connect.timeout";
+    private static final String MONGO_OPTIONS_CONNECT_TIMEOUT_KEY = "mongo.options.connect.timeout";
     /**
      * mongo可选配置执行io操作的超时时间键值
      */
-    private static final String MONGO_OPTIONS_SOCKET_TIMEOUT_KEY = "support.options.socket.timeout";
+    private static final String MONGO_OPTIONS_SOCKET_TIMEOUT_KEY = "mongo.options.socket.timeout";
     /**
      * mongo可选配置为防火墙设置的，保证socket存活键值
      */
-    private static final String MONGO_OPTIONS_SOCKET_KEEP_ALIVE_KEY = "support.options.socket.keep.alive";
+    private static final String MONGO_OPTIONS_SOCKET_KEEP_ALIVE_KEY = "mongo.options.socket.keep.alive";
     /**
      * mongo可选配置总是使用Mbeans键值
      */
-    private static final String MONGO_OPTIONS_ALWAYS_USE_M_BEANS_KEY = "support.options.always.use.m.beans";
+    private static final String MONGO_OPTIONS_ALWAYS_USE_M_BEANS_KEY = "mongo.options.always.use.m.beans";
 
     /**
      * mongo可选配置核心线程数键值
      */
-    private static final String MONGO_OPTIONS_HEARTBEAT_THREAD_COUNT_KEY = "support.options.heartbeat.thread.count";
+    private static final String MONGO_OPTIONS_HEARTBEAT_THREAD_COUNT_KEY = "mongo.options.heartbeat.thread.count";
 
 
     /**
@@ -115,9 +115,9 @@ public class MongoConfig extends AbstractMongoConfiguration {
     private static final boolean MONGO_OPTIONS_SOCKET_KEEP_ALIVE_DEFAULT_VALUE = true;
 
     /**
-     * mongo可选配置总是使用Mbeans ,默认值是:true
+     * mongo可选配置总是使用Mbeans ,默认值是:false
      */
-    private static final boolean MONGO_OPTIONS_ALWAYS_USE_M_BEANS_DEFAULT_VALUE = true;
+    private static final boolean MONGO_OPTIONS_ALWAYS_USE_M_BEANS_DEFAULT_VALUE = false;
 
     /**
      * mongo可选配置核心线程数,默认值:15
