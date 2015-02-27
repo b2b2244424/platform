@@ -15,6 +15,10 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.core.env.Environment;
 import org.springframework.dao.annotation.PersistenceExceptionTranslationPostProcessor;
+import org.springframework.data.auditing.CurrentDateTimeProvider;
+import org.springframework.data.auditing.DateTimeProvider;
+import org.springframework.data.domain.AuditorAware;
+import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.orm.jpa.JpaTransactionManager;
 import org.springframework.orm.jpa.JpaVendorAdapter;
@@ -25,11 +29,14 @@ import org.springframework.transaction.PlatformTransactionManager;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 import com.alibaba.druid.pool.DruidDataSource;
+import com.lml.platform.core.model.authentication.User;
+import com.lml.platform.core.util.authentication.UserTokenAware;
 
 @Configuration
 @PropertySource("classpath:/config/database-config.properties")
 @EnableTransactionManagement
 @EnableJpaRepositories(basePackages = { "com.lml.platform.core.repository" })
+@EnableJpaAuditing
 public class PersistenceContextConfig {
 
 	/***
@@ -146,6 +153,18 @@ public class PersistenceContextConfig {
 		JpaTransactionManager txManager = new JpaTransactionManager();
 		txManager.setEntityManagerFactory(emf);
 		return txManager;
+	}
+
+	@Bean(name = "auditorAware")
+	public AuditorAware<User> auditorAware() {
+		// UserTokenAware userTokenAware = new UserTokenAware();
+		UserTokenAware userTokenAware = new UserTokenAware(1L);
+		return userTokenAware;
+	}
+
+	@Bean(name = "dateTimeProvider")
+	public DateTimeProvider dateTimeProvider() {
+		return CurrentDateTimeProvider.INSTANCE;
 	}
 
 }
